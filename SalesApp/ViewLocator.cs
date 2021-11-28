@@ -1,7 +1,9 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
+using ShowcaseApplication.Core;
 
-namespace ShowcaseApplication.Core
+namespace SalesApp
 {
     public class ViewLocator : IDataTemplate
     {

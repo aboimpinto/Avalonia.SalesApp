@@ -4,12 +4,13 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-  x:Class="ShowcaseApplication.Core.ShellView"
-  Title="ShellView">
+  x:Class="SalesApp.Views.MainWindowView"
+  Title="MainWindowView">
   
   <TextBlock 
-    Text="Welcome to ShellView!" 
+    Text="Welcome to MainWindowView in Avalonia!" 
     HorizontalAlignment="Center" 
     VerticalAlignment="Center"/>
+  
 
 </Window>

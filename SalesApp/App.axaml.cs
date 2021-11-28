@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using SalesApp.Views;
 using ShowcaseApplication.Core;
 
 namespace SalesApp
@@ -16,7 +17,7 @@ namespace SalesApp
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new ShellView();
+                desktop.MainWindow = new MainWindowView();
             }
 
             base.OnFrameworkInitializationCompleted();

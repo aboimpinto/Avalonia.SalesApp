@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace ShowcaseApplication.Core
+namespace SalesApp.Views
 {
-    public partial class ShellView : Window
+    public partial class MainWindowView : Window
     {
-        public ShellView()
+        public MainWindowView()
         {
             InitializeComponent();
 #if DEBUG
