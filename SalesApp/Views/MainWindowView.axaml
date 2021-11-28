@@ -5,12 +5,35 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
   x:Class="SalesApp.Views.MainWindowView"
-  Title="MainWindowView">
+  Title="ModernFlatAvaloniaUI"
+  Background="{x:Null}"
+  TransparencyLevelHint="AcrylicBlur"
+  WindowStartupLocation="CenterScreen"
+  CanResize="False"
+  HasSystemDecorations="False"
+  Width="880"
+  Height="560">
   
-  <TextBlock 
-    Text="Welcome to MainWindowView in Avalonia!" 
-    HorizontalAlignment="Center" 
-    VerticalAlignment="Center"/>
+  <!-- <Panel> -->
+    <!-- <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+          <ExperimentalAcrylicMaterial 
+              BackgroundSource="Digger"
+              TintColor="White"
+              TintOpacity="1"
+              MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder> -->
+
+    <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black">
+      <TextBlock 
+        Text="Welcome to MainWindowView in Avalonia!" 
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center"/>
+    </Border>
+  <!-- </Panel> -->
+
+  
   
 
 </Window>
