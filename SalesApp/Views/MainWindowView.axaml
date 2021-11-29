@@ -3,37 +3,26 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
   x:Class="SalesApp.Views.MainWindowView"
   Title="ModernFlatAvaloniaUI"
-  Background="{x:Null}"
-  TransparencyLevelHint="AcrylicBlur"
+  
+  TransparencyLevelHint="Transparent"
   WindowStartupLocation="CenterScreen"
+  Background="Transparent"
+  ExtendClientAreaToDecorationsHint="True"
+
   CanResize="False"
   HasSystemDecorations="False"
   Width="880"
   Height="560">
   
-  <!-- <Panel> -->
-    <!-- <ExperimentalAcrylicBorder IsHitTestVisible="False">
-      <ExperimentalAcrylicBorder.Material>
-          <ExperimentalAcrylicMaterial 
-              BackgroundSource="Digger"
-              TintColor="White"
-              TintOpacity="1"
-              MaterialOpacity="0.65" />
-      </ExperimentalAcrylicBorder.Material>
-    </ExperimentalAcrylicBorder> -->
-
+  <Panel>
     <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black">
       <TextBlock 
         Text="Welcome to MainWindowView in Avalonia!" 
         HorizontalAlignment="Center" 
         VerticalAlignment="Center"/>
     </Border>
-  <!-- </Panel> -->
-
-  
-  
+  </Panel>
 
 </Window>
