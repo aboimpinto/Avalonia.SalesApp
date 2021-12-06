@@ -1,0 +1,25 @@
+<Styles 
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
+
+  <Style Selector="Button.QuitAppButtonStyle">
+    <Style.Setters>
+      <Setter Property="Template">
+          <ControlTemplate>
+            <Border x:Name="PART_ContentPresenter" Background="{TemplateBinding Background}" CornerRadius="10">
+              <avalonia:MaterialIcon Kind="Close" Width="16" Height="16" />
+            </Border>
+          </ControlTemplate>
+      </Setter>
+
+      <Setter Property="Background" Value="White" />
+      <Setter Property="Foreground" Value="Black" />
+    </Style.Setters>
+  </Style>
+
+  <Style Selector="Button.QuitAppButtonStyle:pointerover">
+    <Setter Property="Background" Value="Red" />
+    <Setter Property="Foreground" Value="White" />
+  </Style>
+</Styles>

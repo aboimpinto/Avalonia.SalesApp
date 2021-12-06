@@ -3,6 +3,9 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:i="using:Avalonia.Xaml.Interactivity"
+  xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+  xmlns:behaviors="clr-namespace:SalesApp.Behaviors"
   x:Class="SalesApp.Views.MainWindowView"
   Title="ModernFlatAvaloniaUI"
   TransparencyLevelHint="Transparent"
@@ -13,6 +16,10 @@
   Width="1024"
   Height="768">
   
+  <i:Interaction.Behaviors>
+      <behaviors:WindowCloseBehavior CloseTrigger="{Binding CloseApplication}" />
+  </i:Interaction.Behaviors>
+
   <Panel>
     <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black" />
 
@@ -24,15 +31,23 @@
       </Grid.RowDefinitions>
 
 
-      <Panel Grid.Row="0" Background="Transparent" VerticalAlignment="Center">
-        <TextBlock Text=".: Avalonia Sales Application :." FontWeight="Bold" Margin="10 0 0 0" />
+      <Panel Name="TitleBarPanel" Grid.Row="0" Background="Transparent" VerticalAlignment="Center">
+        <DockPanel LastChildFill="True">
+          <TextBlock DockPanel.Dock="Left" Text=".: Avalonia Sales Application :." FontWeight="Bold" Margin="10 0 0 0" />
+          <Button 
+            Classes="QuitAppButtonStyle"
+            DockPanel.Dock="Right" 
+            HorizontalAlignment="Right" 
+            Margin="0 0 5 0" 
+            Command="{Binding CloseWindowCommand}"/>
+        </DockPanel>
       </Panel>
 
       <TextBlock 
         Grid.Row="1"
         Text="Welcome to MainWindowView in Avalonia!" 
         HorizontalAlignment="Center" 
-        VerticalAlignment="Center"/>
+        VerticalAlignment="Center" />
 
       <Panel Grid.Row="2" VerticalAlignment="Center" Background="Transparent">
         <TextBlock Text="Application is ready" Margin="10 0 0 0" />

@@ -1,22 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <AvaloniaResource Include="Assets\**" />
-    <None Remove=".gitignore" />
+    <Folder Include="Models\"/>
+    <AvaloniaResource Include="Assets\**"/>
+    <None Remove=".gitignore"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="*" />
-    <PackageReference Include="Avalonia.Desktop" Version="*" />
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="*" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="*" />
+    <PackageReference Include="Avalonia" Version="*"/>
+    <PackageReference Include="Avalonia.Desktop" Version="*"/>
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="*"/>
+    <PackageReference Include="Avalonia.ReactiveUI" Version="*"/>
+    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="*"/>
+    <PackageReference Include="Material.Icons.Avalonia" Version="*" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj" />
+    <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj"/>
   </ItemGroup>
 </Project>
