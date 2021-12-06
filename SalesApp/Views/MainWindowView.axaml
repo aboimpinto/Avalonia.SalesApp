@@ -5,24 +5,40 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   x:Class="SalesApp.Views.MainWindowView"
   Title="ModernFlatAvaloniaUI"
-  
   TransparencyLevelHint="Transparent"
-  WindowStartupLocation="CenterScreen"
   Background="Transparent"
   ExtendClientAreaToDecorationsHint="True"
-
   CanResize="False"
   HasSystemDecorations="False"
-  Width="880"
-  Height="560">
+  Width="1024"
+  Height="768">
   
   <Panel>
-    <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black">
+    <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black" />
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="25" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="25" />
+      </Grid.RowDefinitions>
+
+
+      <Panel Grid.Row="0" Background="Transparent" VerticalAlignment="Center">
+        <TextBlock Text=".: Avalonia Sales Application :." FontWeight="Bold" Margin="10 0 0 0" />
+      </Panel>
+
       <TextBlock 
+        Grid.Row="1"
         Text="Welcome to MainWindowView in Avalonia!" 
         HorizontalAlignment="Center" 
         VerticalAlignment="Center"/>
-    </Border>
+
+      <Panel Grid.Row="2" VerticalAlignment="Center" Background="Transparent">
+        <TextBlock Text="Application is ready" Margin="10 0 0 0" />
+      </Panel>
+
+    </Grid>
   </Panel>
 
 </Window>
