@@ -4,8 +4,8 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:i="using:Avalonia.Xaml.Interactivity"
-  xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
   xmlns:behaviors="clr-namespace:SalesApp.Behaviors"
+  xmlns:controls="clr-namespace:SalesApp.Controls"
   x:Class="SalesApp.Views.MainWindowView"
   Title="ModernFlatAvaloniaUI"
   TransparencyLevelHint="Transparent"
@@ -30,7 +30,6 @@
         <RowDefinition Height="25" />
       </Grid.RowDefinitions>
 
-
       <Panel Name="TitleBarPanel" Grid.Row="0" Background="Transparent" VerticalAlignment="Center">
         <DockPanel LastChildFill="True">
           <TextBlock DockPanel.Dock="Left" Text=".: Avalonia Sales Application :." FontWeight="Bold" Margin="10 0 0 0" />
@@ -43,11 +42,49 @@
         </DockPanel>
       </Panel>
 
-      <TextBlock 
-        Grid.Row="1"
-        Text="Welcome to MainWindowView in Avalonia!" 
-        HorizontalAlignment="Center" 
-        VerticalAlignment="Center" />
+      <Grid Grid.Row="1">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="200" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+
+          <TextBlock 
+            Grid.Row="0"
+            Text="Avalonia Sales"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="Black" />
+
+          <StackPanel Grid.Row="1">
+            <controls:MenuItemButton 
+              Content="DashboardOutline" 
+              Kind="ViewDashboard" 
+              Classes="MenuItem" 
+              IsChecked="True" />
+
+            <controls:MenuItemButton 
+              Content="Orders" 
+              Kind="BallotOutline" 
+              Classes="MenuItem" />
+            
+            <controls:MenuItemButton 
+              Content="Clients" 
+              Kind="AccountGroupOutline" 
+              Classes="MenuItem" />
+            
+            <controls:MenuItemButton 
+              Content="Products" 
+              Kind="CartOutline" 
+              Classes="MenuItem" />
+          </StackPanel>
+        </Grid>
+      </Grid>
 
       <Panel Grid.Row="2" VerticalAlignment="Center" Background="Transparent">
         <TextBlock Text="Application is ready" Margin="10 0 0 0" />
