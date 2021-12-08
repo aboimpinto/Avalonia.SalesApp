@@ -64,37 +64,47 @@
           <DockPanel Grid.Row="1" LastChildFill="True">
             <controls:MenuItemButton 
               DockPanel.Dock="Top"
-              Content="DashboardOutline" 
-              Kind="ViewDashboard" 
+              Content="Dashboard" 
+              Kind="ViewDashboardOutline" 
               Classes="MenuItem" 
-              IsChecked="True" />
+              IsChecked="True"
+              Command="{Binding DashboardNavigationCommand}" />
 
             <controls:MenuItemButton 
               DockPanel.Dock="Top"
               Content="Orders" 
               Kind="BallotOutline" 
-              Classes="MenuItem" />
+              Classes="MenuItem"
+              Command="{Binding OrdersNavigationCommand}" />
             
             <controls:MenuItemButton 
               DockPanel.Dock="Top"
               Content="Clients" 
               Kind="AccountGroupOutline" 
-              Classes="MenuItem" />
+              Classes="MenuItem" 
+              Command="{Binding ClientsNavigationCommand}" />
             
             <controls:MenuItemButton 
               DockPanel.Dock="Top"
               Content="Products" 
               Kind="CartOutline" 
-              Classes="MenuItem" />
+              Classes="MenuItem"
+              Command="{Binding ProductsNavigationCommand}" />
 
             <controls:MenuItemButton 
               DockPanel.Dock="Bottom"
               Content="Settings" 
               Kind="CogOutline" 
               Classes="MenuItem"
-              VerticalAlignment="Bottom" />
+              VerticalAlignment="Bottom"
+              Command="{Binding SettingsNavigationCommand}" />
           </DockPanel>
         </Grid>
+
+        <ContentControl 
+          Grid.Column="1"
+          Content="{Binding NavigationContent}"
+          Margin="5" />
       </Grid>
 
       <Panel Grid.Row="2" VerticalAlignment="Center" Background="Transparent">
