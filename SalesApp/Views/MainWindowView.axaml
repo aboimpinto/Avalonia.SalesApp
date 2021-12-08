@@ -61,28 +61,39 @@
             VerticalAlignment="Center"
             Foreground="Black" />
 
-          <StackPanel Grid.Row="1">
+          <DockPanel Grid.Row="1" LastChildFill="True">
             <controls:MenuItemButton 
+              DockPanel.Dock="Top"
               Content="DashboardOutline" 
               Kind="ViewDashboard" 
               Classes="MenuItem" 
               IsChecked="True" />
 
             <controls:MenuItemButton 
+              DockPanel.Dock="Top"
               Content="Orders" 
               Kind="BallotOutline" 
               Classes="MenuItem" />
             
             <controls:MenuItemButton 
+              DockPanel.Dock="Top"
               Content="Clients" 
               Kind="AccountGroupOutline" 
               Classes="MenuItem" />
             
             <controls:MenuItemButton 
+              DockPanel.Dock="Top"
               Content="Products" 
               Kind="CartOutline" 
               Classes="MenuItem" />
-          </StackPanel>
+
+            <controls:MenuItemButton 
+              DockPanel.Dock="Bottom"
+              Content="Settings" 
+              Kind="CogOutline" 
+              Classes="MenuItem"
+              VerticalAlignment="Bottom" />
+          </DockPanel>
         </Grid>
       </Grid>
 
