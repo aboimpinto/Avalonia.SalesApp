@@ -1,8 +1,8 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using SalesApp.ViewModels;
 using SalesApp.Views;
+using ShowcaseApplication.Core;
 
 namespace SalesApp
 {
@@ -17,10 +17,11 @@ namespace SalesApp
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                // [TODO] [AboimPinto] [06.12.2021]: The ViewModel need to be injected into the View
+                var viewModel = Program.ServiceLocator.ServiceProvider.GetService<ViewModelBase>("MainWindowViewModel");
+
                 desktop.MainWindow = new MainWindowView()
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = viewModel,
                 };
             }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Input;
 using ReactiveUI;
 using ShowcaseApplication.Core;
@@ -8,6 +9,7 @@ namespace SalesApp.ViewModels
     {
         private bool _closeApplication;
         private ViewModelBase _navigationContent;
+        private readonly INavigationService _navigationService;
 
         public ICommand CloseWindowCommand { get; }
         public ICommand DashboardNavigationCommand { get; }
@@ -28,8 +30,10 @@ namespace SalesApp.ViewModels
             set => this.RaiseAndSetIfChanged(ref this._closeApplication, value);
         }
 
-        public MainWindowViewModel()
+        public MainWindowViewModel(INavigationService navigationService)
         {
+            this._navigationService = navigationService;
+
             this.CloseWindowCommand = ReactiveCommand.Create(this.OnCloseWindow);
 
             this.DashboardNavigationCommand = ReactiveCommand.Create(this.OnDashboardNavigationClick);
@@ -37,31 +41,37 @@ namespace SalesApp.ViewModels
             this.ClientsNavigationCommand = ReactiveCommand.Create(this.onClientsNavigationClick);
             this.ProductsNavigationCommand = ReactiveCommand.Create(this.OnProductsNavigationClick);
             this.SettingsNavigationCommand = ReactiveCommand.Create(this.OnSettingsNavigationClick);
+
+            this._navigationService
+                .OnNavigation
+                .Subscribe(x => this.NavigationContent = x);
+
+            this.OnDashboardNavigationClick();
         }
 
         private void OnDashboardNavigationClick()
         {
-            this.NavigationContent = new DashboardViewModel();
+            this._navigationService.Navigate("DashboardViewModel");
         }
 
         private void OnOrdersNavigationClick()
         {
-            this.NavigationContent = new OrdersViewModel();
+            this._navigationService.Navigate("OrdersViewModel");
         }
 
         private void onClientsNavigationClick()
         {
-            this.NavigationContent = new ClientsViewModel();
+            this._navigationService.Navigate("ClientsViewModel");
         }
 
         private void OnProductsNavigationClick()
         {
-            this.NavigationContent = new ProductsViewModel();
+            this._navigationService.Navigate("ProductsViewModel");
         }
 
         private void OnSettingsNavigationClick()
         {
-            this.NavigationContent = new SettingsViewModel();
+            this._navigationService.Navigate("SettingsViewModel");
         }
 
         private void OnCloseWindow()
