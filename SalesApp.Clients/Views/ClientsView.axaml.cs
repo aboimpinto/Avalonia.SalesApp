@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace SalesApp.Views
+namespace SalesApp.Clients.Views
 {
-    public partial class OrdersView : UserControl
+    public partial class ClientsView : UserControl
     {
-        public OrdersView()
+        public ClientsView()
         {
             InitializeComponent();
         }

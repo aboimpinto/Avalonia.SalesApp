@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="*" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj" />
+  </ItemGroup>
+
 </Project>

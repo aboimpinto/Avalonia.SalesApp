@@ -2,6 +2,9 @@
 using Avalonia;
 using Avalonia.ReactiveUI;
 using Microsoft.Extensions.DependencyInjection;
+using SalesApp.Clients;
+using SalesApp.Orders;
+using SalesApp.Products;
 using SalesApp.ViewModels;
 using ShowcaseApplication.Core;
 
@@ -19,10 +22,7 @@ namespace SalesApp
         {
             ServiceLocator.ServiceCollection.AddSingleton<INavigationService, NavigationService>();
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, MainWindowViewModel>("MainWindowViewModel");
-            ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, ClientsViewModel>("ClientsViewModel");
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, DashboardViewModel>("DashboardViewModel");
-            ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, OrdersViewModel>("OrdersViewModel");
-            ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, ProductsViewModel>("ProductsViewModel");
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, SettingsViewModel>("SettingsViewModel");
 
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
@@ -32,6 +32,9 @@ namespace SalesApp
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace()
-                .UseReactiveUI();
+                .UseReactiveUI()
+                .RegisterClientsModule(ServiceLocator)
+                .RegisterProductsModule(ServiceLocator)
+                .RegisterOrdersModule(ServiceLocator);
     }
 }

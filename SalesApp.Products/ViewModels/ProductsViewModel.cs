@@ -1,6 +1,6 @@
 using ShowcaseApplication.Core;
 
-namespace SalesApp.ViewModels
+namespace SalesApp.Products.ViewModels
 {
     public class ProductsViewModel : ViewModelBase
     {

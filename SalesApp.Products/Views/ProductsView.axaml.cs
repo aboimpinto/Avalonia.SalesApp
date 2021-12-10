@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace SalesApp.Views
+namespace SalesApp.Products.Views
 {
     public partial class ProductsView : UserControl
     {

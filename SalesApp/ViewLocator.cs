@@ -10,7 +10,8 @@ namespace SalesApp
         public IControl Build(object data)
         {
             var name = data.GetType().FullName!.Replace("ViewModel", "View");
-            var type = Type.GetType(name);
+            var assembly = data.GetType().Assembly.FullName;
+            var type = Type.GetType($"{name}, {assembly}");
 
             if (type != null)
             {
