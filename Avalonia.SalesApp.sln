@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApp.Orders", "SalesApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApp.DbAccess", "SalesApp.DbAccess\SalesApp.DbAccess.csproj", "{9DA5D2D2-CDF7-4789-9505-026213841983}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesApp.Model", "SalesApp.Model\SalesApp.Model.csproj", "{2FB22223-61BF-4131-8170-98F685514E3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{9DA5D2D2-CDF7-4789-9505-026213841983}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DA5D2D2-CDF7-4789-9505-026213841983}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DA5D2D2-CDF7-4789-9505-026213841983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FB22223-61BF-4131-8170-98F685514E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FB22223-61BF-4131-8170-98F685514E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FB22223-61BF-4131-8170-98F685514E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FB22223-61BF-4131-8170-98F685514E3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
