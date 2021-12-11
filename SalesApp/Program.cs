@@ -3,6 +3,7 @@ using Avalonia;
 using Avalonia.ReactiveUI;
 using Microsoft.Extensions.DependencyInjection;
 using SalesApp.Clients;
+using SalesApp.DbAccess;
 using SalesApp.Orders;
 using SalesApp.Products;
 using SalesApp.ViewModels;
@@ -35,6 +36,10 @@ namespace SalesApp
                 .UseReactiveUI()
                 .RegisterClientsModule(ServiceLocator)
                 .RegisterProductsModule(ServiceLocator)
-                .RegisterOrdersModule(ServiceLocator);
+                .RegisterOrdersModule(ServiceLocator)
+                .RegisterDbAccessModule(ServiceLocator);
+
+        // TODO: One alternative is to discover the modules and use Assembly Scanning method discussed here:
+        // https://www.youtube.com/watch?v=_YkvFQ1-Lt0
     }
 }

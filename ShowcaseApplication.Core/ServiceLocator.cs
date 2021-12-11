@@ -1,11 +1,10 @@
-using System;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ShowcaseApplication.Core
 {
     public class ServiceLocator : IServiceLocator
     {
-        public ServiceCollection ServiceCollection { get; }
+        public IServiceCollection ServiceCollection { get; }
 
         public ServiceProvider ServiceProvider => this.ServiceCollection.BuildServiceProvider();
 

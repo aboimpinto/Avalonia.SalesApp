@@ -23,5 +23,6 @@
     <ProjectReference Include="..\SalesApp.Clients\SalesApp.Clients.csproj" />
     <ProjectReference Include="..\SalesApp.Products\SalesApp.Products.csproj" />
     <ProjectReference Include="..\SalesApp.Orders\SalesApp.Orders.csproj" />
+    <ProjectReference Include="..\SalesApp.DbAccess\SalesApp.DbAccess.csproj" />
   </ItemGroup>
 </Project>

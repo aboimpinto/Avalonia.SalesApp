@@ -331,8 +331,7 @@ __pycache__/
 # BizTalk build output
 *.btp.cs
 *.btm.cs
-*.odx.cs
-*.xsd.cs
+*.odx.cs.db
 
 # OpenCover UI analysis results
 OpenCover/
@@ -452,3 +451,5 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+*.db

@@ -5,7 +5,7 @@ namespace ShowcaseApplication.Core
 {
     public interface IServiceLocator
     {
-        ServiceCollection ServiceCollection { get; }
+        IServiceCollection ServiceCollection { get; }
 
         ServiceProvider ServiceProvider { get; }
     }
