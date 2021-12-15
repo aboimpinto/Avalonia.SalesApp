@@ -9,6 +9,7 @@ public static class AppBuilderExtensions
         where T : AppBuilderBase<T>, new() 
     {
         serviceLocator.ServiceCollection.AddScoped<ViewModelBase, ClientsViewModel>("ClientsViewModel");
+        serviceLocator.ServiceCollection.AddScoped<ViewModelBase, AddUpdateClientViewModel>("AddUpdateClientViewModel");
 
         return builder;
     }
