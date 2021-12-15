@@ -3,12 +3,61 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
   mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
   x:Class="SalesApp.Clients.Views.ClientsView">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="60" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="57" />
+    </Grid.RowDefinitions>
+
+    <Panel Grid.Row="0" Background="Yellow">
+      <TextBlock Text="Clients" />
+    </Panel>
+
+    <Panel Grid.Row="1" Background="Cyan">
+      <TextBlock 
+        Grid.Row="1"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Text="Clients!" />
+    </Panel>
+
+      <Panel Grid.Row="2">
+        <DockPanel LastChildFill="True" Margin="5">
+
+          <DockPanel.Styles>
+            <Style Selector="styles|FloatingButton.AddClientButtonStyle">
+              <Setter Property="Content">
+                <Setter.Value>
+                  <Template>
+                    <StackPanel Orientation="Horizontal" Height="24">
+                      <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <avalonia:MaterialIcon Kind="Plus" Width="24" Height="24" />
+                      </Viewbox>
+                      <TextBlock Margin="8,0" Text="ADD CLIENT" Classes="Subtitle2" VerticalAlignment="Center" />
+                    </StackPanel>
+                  </Template>
+                </Setter.Value>
+              </Setter>
+            </Style>
+          </DockPanel.Styles>
+
+
+          <styles:FloatingButton 
+            DockPanel.Dock="Right" 
+            HorizontalAlignment="Right"
+            Classes="AddClientButtonStyle"
+            IsExtended="True"
+            Command="{Binding AddClientCommand}" />
+        </DockPanel>
+      </Panel>
+  </Grid>
+
   
-  <TextBlock 
-    VerticalAlignment="Center"
-    HorizontalAlignment="Center"
-    Text="Clients!" />
 
 </UserControl>
