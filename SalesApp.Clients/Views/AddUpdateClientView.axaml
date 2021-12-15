@@ -6,9 +6,12 @@
   mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
   x:Class="SalesApp.Clients.Views.AddUpdateClientView">
   
-  <TextBlock 
-    VerticalAlignment="Center"
-    HorizontalAlignment="Center"
-    Text="Add / Update Client!" />
+  <ContentView>
+    <TextBlock 
+      VerticalAlignment="Center"
+      HorizontalAlignment="Center"
+      Text="Add / Update Client!" />
+  </ContentView>
+
 
 </UserControl>

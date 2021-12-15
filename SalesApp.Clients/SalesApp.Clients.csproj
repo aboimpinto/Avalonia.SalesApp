@@ -5,12 +5,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="*"/>
-    <PackageReference Include="Avalonia.ReactiveUI" Version="*"/>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*"/>
-    <PackageReference Include="Material.Avalonia" Version="*"/>
+    <PackageReference Include="Avalonia" Version="*" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
+    <PackageReference Include="Material.Avalonia" Version="*" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj"/>
+    <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj" />
+    <ProjectReference Include="..\ShowcaseApplication.Controls\ShowcaseApplication.Controls.csproj" />
   </ItemGroup>
 </Project>

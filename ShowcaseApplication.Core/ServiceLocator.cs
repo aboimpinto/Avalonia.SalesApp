@@ -24,7 +24,6 @@ namespace ShowcaseApplication.Core
         public ServiceLocator()
         {
             this.ServiceCollection = new ServiceCollection();
-
             this.ServiceCollection.AddSingleton<IServiceLocator>(this);
         }
     }
