@@ -7,10 +7,12 @@
   x:Class="SalesApp.Clients.Views.AddUpdateClientView">
   
   <ContentView>
-    <TextBlock 
-      VerticalAlignment="Center"
-      HorizontalAlignment="Center"
-      Text="Add / Update Client!" />
+    <!-- <ContentView.Content> -->
+      <TextBlock 
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Text="Add / Update Client!" />
+    <!-- </ContentView.Content> -->
   </ContentView>
 
 
