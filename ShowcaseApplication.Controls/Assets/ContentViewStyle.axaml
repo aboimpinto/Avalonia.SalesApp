@@ -8,8 +8,39 @@
     </Border>
   </Design.PreviewWith>
 
-  <Style Selector="ContentControl.ContentView">
+  <Style Selector="ContentControl.DefaultStyle">
     <Style.Setters>
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="60" />
+              <RowDefinition Height="*" />
+              <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="From Template" />
+
+            <ContentPresenter
+              Grid.Row="1"
+              Background="{TemplateBinding Background}"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              BorderThickness="{TemplateBinding BorderThickness}"
+              Content="{TemplateBinding Content}"
+              ContentTemplate="{TemplateBinding ContentTemplate}"
+              Padding="{TemplateBinding Padding}"
+              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+              <Button Content="Button1" />
+              <Button Content="Button2" />
+              <Button Content="Button3" />
+            </StackPanel>
+          </Grid>
+        </ControlTemplate>
+      </Setter>
+
       <Setter Property="Background" Value="Red" />
     </Style.Setters>
   </Style>
