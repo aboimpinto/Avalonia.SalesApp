@@ -8,7 +8,7 @@
     </Border>
   </Design.PreviewWith>
 
-  <Style Selector="ContentControl.DefaultStyle">
+  <Style Selector="ContentView.DefaultStyle">
     <Style.Setters>
       <Setter Property="Template">
         <ControlTemplate>
@@ -19,7 +19,12 @@
               <RowDefinition Height="60" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="From Template" />
+            <TextBlock 
+              Grid.Row="0" 
+              FontSize="32"
+              Margin="10 0 0 0"
+              FontWeight="Bold"
+              Text="{TemplateBinding Header}" />
 
             <ContentPresenter
               Grid.Row="1"
@@ -32,17 +37,40 @@
               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
 
+            <!-- 
             <StackPanel Grid.Row="2" Orientation="Horizontal">
               <Button Content="Button1" />
               <Button Content="Button2" />
               <Button Content="Button3" />
-            </StackPanel>
+            </StackPanel> 
+            -->
+
+            <ItemsControl Grid.Row="2" Items="{TemplateBinding Buttons}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <DockPanel LastChildFill="False" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+
           </Grid>
         </ControlTemplate>
       </Setter>
 
       <Setter Property="Background" Value="Red" />
     </Style.Setters>
+  </Style>
+
+  <Style Selector="Button.ContentLeftAlignment">
+      <Style.Setters>
+          <Setter Property="Margin" Value="5 5 0 5" />
+      </Style.Setters>
+  </Style>
+
+  <Style Selector="Button.ContentRightAlignment">
+      <Style.Setters>
+          <Setter Property="Margin" Value="0 5 5 5" />
+      </Style.Setters>
   </Style>
 
 </Styles>

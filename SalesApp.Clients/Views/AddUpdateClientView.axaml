@@ -3,12 +3,17 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
   mc:Ignorable="d" 
   d:DesignWidth="800" 
   d:DesignHeight="450"
   x:Class="SalesApp.Clients.Views.AddUpdateClientView">
 
-  <ContentView Classes="DefaultStyle">
+  <ContentView 
+    Classes="DefaultStyle" 
+    Header="Edit client">
+
     <ContentView.Content>
       <TextBlock 
         VerticalAlignment="Center"
@@ -17,7 +22,24 @@
     </ContentView.Content>
 
     <ContentView.Buttons>
-      <Button Content="ClickME!" />
+      <IconButton 
+        DockPanel.Dock="Left"
+        Classes="ContentLeftAlignment"
+        Content="Edit" 
+        Kind="Pencil" />
+
+      <IconButton 
+        DockPanel.Dock="Right"
+        Classes="ContentRightAlignment"
+        Content="Cancel" 
+        Kind="Close" />
+
+      <IconButton 
+        DockPanel.Dock="Right"
+        Classes="ContentRightAlignment"
+        Content="SAVE" 
+        Kind="ContentSave" />
+
     </ContentView.Buttons>
   </ContentView>
 

@@ -20,6 +20,7 @@
         <StyleInclude Source="avares://Material.Icons.Avalonia/App.xaml" />
 
         <StyleInclude Source="avares://ShowcaseApplication.Controls/Assets/ContentViewStyle.axaml" />
+        <StyleInclude Source="avares://ShowcaseApplication.Controls/Assets/IconButtonStyle.axaml" />
 
         <StyleInclude Source="/Assets/QuitAppButtonStyle.axaml" />
         <StyleInclude Source="/Assets/MenuItemButtonStyle.axaml" />

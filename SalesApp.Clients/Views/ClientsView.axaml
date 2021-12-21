@@ -30,30 +30,19 @@
       <Panel Grid.Row="2">
         <DockPanel LastChildFill="True" Margin="5">
 
-          <DockPanel.Styles>
-            <Style Selector="styles|FloatingButton.AddClientButtonStyle">
-              <Setter Property="Content">
-                <Setter.Value>
-                  <Template>
-                    <StackPanel Orientation="Horizontal" Height="24">
-                      <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                        <avalonia:MaterialIcon Kind="Plus" Width="24" Height="24" />
-                      </Viewbox>
-                      <TextBlock Margin="8,0" Text="ADD CLIENT" Classes="Subtitle2" VerticalAlignment="Center" />
-                    </StackPanel>
-                  </Template>
-                </Setter.Value>
-              </Setter>
-            </Style>
-          </DockPanel.Styles>
+            <IconButton 
+              Content="ClickME!" 
+              Kind="Home"
+              DockPanel.Dock="Left"
+              Classes="ContentLeftAlignment" />
 
-
-          <styles:FloatingButton 
-            DockPanel.Dock="Right" 
-            HorizontalAlignment="Right"
-            Classes="AddClientButtonStyle"
-            IsExtended="True"
-            Command="{Binding AddClientCommand}" />
+            <IconButton 
+              DockPanel.Dock="Right"
+              Classes="ContentRightAlignment"
+              Content="ADD CLIENT" 
+              Kind="Plus"
+              Command="{Binding AddClientCommand}" />
+              
         </DockPanel>
       </Panel>
   </Grid>

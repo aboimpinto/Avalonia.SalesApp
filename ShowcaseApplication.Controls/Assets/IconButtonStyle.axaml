@@ -1,0 +1,40 @@
+<Styles 
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+  xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
+
+  <Style Selector="IconButton">
+    <Style.Setters>
+      <Setter Property="Template">
+        <ControlTemplate>
+          
+          <styles:FloatingButton
+            HorizontalAlignment="Right"
+            Classes="ContentRightAlignment"
+            DockPanel.Dock="Right"
+            IsExtended="True"
+            Command="{TemplateBinding Command}">
+
+            <styles:FloatingButton.Content>
+
+              <StackPanel Orientation="Horizontal" Height="24">
+                <Viewbox Stretch="Fill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                  <avalonia:MaterialIcon Kind="{TemplateBinding Kind}" Width="24" Height="24" />
+                </Viewbox>
+
+                <TextBlock 
+                    Margin="8,0" 
+                    Text="{TemplateBinding Content}" 
+                    Classes="Subtitle2" 
+                    VerticalAlignment="Center" />
+              </StackPanel>
+            </styles:FloatingButton.Content>
+
+          </styles:FloatingButton>
+
+        </ControlTemplate>
+      </Setter>
+    </Style.Setters>
+  </Style>
+</Styles>
