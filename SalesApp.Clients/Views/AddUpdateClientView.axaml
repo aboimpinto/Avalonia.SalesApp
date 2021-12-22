@@ -18,57 +18,63 @@
     <ContentView.Content>      
 
       <StackPanel HorizontalAlignment="Stretch" >
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+        <DockPanel LastChildFill="True" Margin="0 0 0 10" >
           <TextBox 
             UseFloatingWatermark="True" 
             Classes="Filled"
             wpf:TextFieldAssist.Label="Username"
             Width="250" 
             HorizontalAlignment="Left"
-            Margin="0 0 10 0" />
+            DockPanel.Dock="Left" />
+
+          <Panel Width="10" />
+
           <TextBox 
             UseFloatingWatermark="True" 
             Classes="Filled" 
             wpf:TextFieldAssist.Label="Email address"
-            Width="510" 
-            HorizontalAlignment="Left"
-            Margin="0 0 10 0" />
-        </StackPanel>
+            HorizontalAlignment="Stretch"
+            DockPanel.Dock="Right"  />
+        </DockPanel>
 
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+        <DockPanel LastChildFill="True" Margin="0 0 0 10">
           <TextBox 
             UseFloatingWatermark="True" 
             Classes="Filled" 
             wpf:TextFieldAssist.Label="First Name"
             Width="380" 
             HorizontalAlignment="Left"
-            Margin="0 0 10 0" />
+            DockPanel.Dock="Left" />
+
+          <Panel Width="10" />          
 
           <TextBox 
             UseFloatingWatermark="True" 
             Classes="Filled" 
             wpf:TextFieldAssist.Label="Last Name"
-            Width="380" 
-            HorizontalAlignment="Left"
-            Margin="0 0 10 0" />
-        </StackPanel>
+            HorizontalAlignment="Stretch"
+            DockPanel.Dock="Right" />
+        </DockPanel>
 
         <TextBox 
           UseFloatingWatermark="True" 
           Classes="Filled" 
           wpf:TextFieldAssist.Label="Address"
-          Width="770" 
-          HorizontalAlignment="Left"
-          Margin="0 0 0 10" />
+          HorizontalAlignment="Stretch" />
 
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+        <Panel Height="10" />
+
+        <DockPanel LastChildFill="True">
           <TextBox 
             UseFloatingWatermark="True" 
             Classes="Filled" 
             wpf:TextFieldAssist.Label="Portal Code"
             Width="250" 
             HorizontalAlignment="Left"
-            Margin="0 0 10 0" />
+            DockPanel.Dock="Left" />
+
+          <Panel Width="10" HorizontalAlignment="Left"
+            DockPanel.Dock="Left" />
 
           <TextBox 
             UseFloatingWatermark="True" 
@@ -76,86 +82,20 @@
             wpf:TextFieldAssist.Label="City"
             Width="250" 
             HorizontalAlignment="Left"
-            Margin="0 0 10 0" />
+            DockPanel.Dock="Left" />
+
+          <Panel Width="10" HorizontalAlignment="Left"
+            DockPanel.Dock="Left" />
 
           <TextBox 
             UseFloatingWatermark="True" 
             Classes="Filled" 
             wpf:TextFieldAssist.Label="Country"
-            Width="250" 
-            HorizontalAlignment="Left"
-            Margin="0 0 10 0" />
-        </StackPanel>
+            HorizontalAlignment="Stretch"
+            DockPanel.Dock="Right" />
+        </DockPanel>
 
       </StackPanel>
-
-      <!--
-      <WrapPanel HorizontalAlignment="Stretch">
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled"
-          wpf:TextFieldAssist.Label="Username"
-          Width="250" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled" 
-          wpf:TextFieldAssist.Label="Email address"
-          Width="350" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled" 
-          wpf:TextFieldAssist.Label="First Name"
-          Width="250" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled" 
-          wpf:TextFieldAssist.Label="Last Name"
-          Width="250" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled" 
-          wpf:TextFieldAssist.Label="Address"
-          Width="350" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled" 
-          wpf:TextFieldAssist.Label="City"
-          Width="250" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled" 
-          wpf:TextFieldAssist.Label="Country"
-          Width="250" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-
-        <TextBox 
-          UseFloatingWatermark="True" 
-          Classes="Filled" 
-          wpf:TextFieldAssist.Label="Portal Code"
-          Width="250" 
-          HorizontalAlignment="Left"
-          Margin="0 0 10 0" />
-      </WrapPanel>
-      -->
       
     </ContentView.Content>
 

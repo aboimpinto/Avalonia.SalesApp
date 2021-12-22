@@ -12,12 +12,7 @@
     <Style.Setters>
       <Setter Property="Template">
         <ControlTemplate>
-          <Grid>
-            <Grid.RowDefinitions>
-              <RowDefinition Height="60" />
-              <RowDefinition Height="*" />
-              <RowDefinition Height="60" />
-            </Grid.RowDefinitions>
+          <Grid Margin="10 0" RowDefinitions="60 * 60">
 
             <TextBlock 
               Grid.Row="0" 
@@ -36,14 +31,6 @@
               Padding="{TemplateBinding Padding}"
               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-
-            <!-- 
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
-              <Button Content="Button1" />
-              <Button Content="Button2" />
-              <Button Content="Button3" />
-            </StackPanel> 
-            -->
 
             <ItemsControl Grid.Row="2" Items="{TemplateBinding Buttons}">
                 <ItemsControl.ItemsPanel>
