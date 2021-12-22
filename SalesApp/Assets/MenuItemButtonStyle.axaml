@@ -14,8 +14,10 @@
               Height="50">
 
               <avalonia:MaterialIcon
+                Name="PART_IconContent"
                 Kind="{Binding Kind, RelativeSource={RelativeSource TemplatedParent}}"
                 VerticalAlignment="Center"
+                Foreground="{TemplateBinding Foreground}"
                 Margin="20 0 0 0" />
 
               <ContentPresenter
@@ -43,11 +45,11 @@
   </Style>
 
   <Style Selector="ToggleButton.MenuItem:checked /template/ StackPanel#PART_ContentPresenter">
-    <Setter Property="Background" Value="#A667C3" />
+    <Setter Property="Background" Value="Teal" />
   </Style>
 
-  <Style Selector="ToggleButton.MenuItem:unchecked /template/ StackPanel#PART_ContentPresenter">
-    <Setter Property="Background" Value="Transparent" />
+  <Style Selector="ToggleButton.MenuItem:checked">
+    <Setter Property="Foreground" Value="#FFFFFF" />
   </Style>
 
 </Styles>
