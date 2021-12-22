@@ -5,6 +5,7 @@
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
   xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+  xmlns:wpf="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
   mc:Ignorable="d" 
   d:DesignWidth="800" 
   d:DesignHeight="450"
@@ -14,11 +15,148 @@
     Classes="DefaultStyle" 
     Header="Edit client">
 
-    <ContentView.Content>
-      <TextBlock 
-        VerticalAlignment="Center"
-        HorizontalAlignment="Center"
-        Text="Add / Update Client!" />
+    <ContentView.Content>      
+
+      <StackPanel HorizontalAlignment="Stretch" >
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+          <TextBox 
+            UseFloatingWatermark="True" 
+            Classes="Filled"
+            wpf:TextFieldAssist.Label="Username"
+            Width="250" 
+            HorizontalAlignment="Left"
+            Margin="0 0 10 0" />
+          <TextBox 
+            UseFloatingWatermark="True" 
+            Classes="Filled" 
+            wpf:TextFieldAssist.Label="Email address"
+            Width="510" 
+            HorizontalAlignment="Left"
+            Margin="0 0 10 0" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+          <TextBox 
+            UseFloatingWatermark="True" 
+            Classes="Filled" 
+            wpf:TextFieldAssist.Label="First Name"
+            Width="380" 
+            HorizontalAlignment="Left"
+            Margin="0 0 10 0" />
+
+          <TextBox 
+            UseFloatingWatermark="True" 
+            Classes="Filled" 
+            wpf:TextFieldAssist.Label="Last Name"
+            Width="380" 
+            HorizontalAlignment="Left"
+            Margin="0 0 10 0" />
+        </StackPanel>
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="Address"
+          Width="770" 
+          HorizontalAlignment="Left"
+          Margin="0 0 0 10" />
+
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+          <TextBox 
+            UseFloatingWatermark="True" 
+            Classes="Filled" 
+            wpf:TextFieldAssist.Label="Portal Code"
+            Width="250" 
+            HorizontalAlignment="Left"
+            Margin="0 0 10 0" />
+
+          <TextBox 
+            UseFloatingWatermark="True" 
+            Classes="Filled" 
+            wpf:TextFieldAssist.Label="City"
+            Width="250" 
+            HorizontalAlignment="Left"
+            Margin="0 0 10 0" />
+
+          <TextBox 
+            UseFloatingWatermark="True" 
+            Classes="Filled" 
+            wpf:TextFieldAssist.Label="Country"
+            Width="250" 
+            HorizontalAlignment="Left"
+            Margin="0 0 10 0" />
+        </StackPanel>
+
+      </StackPanel>
+
+      <!--
+      <WrapPanel HorizontalAlignment="Stretch">
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled"
+          wpf:TextFieldAssist.Label="Username"
+          Width="250" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="Email address"
+          Width="350" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="First Name"
+          Width="250" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="Last Name"
+          Width="250" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="Address"
+          Width="350" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="City"
+          Width="250" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="Country"
+          Width="250" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+
+        <TextBox 
+          UseFloatingWatermark="True" 
+          Classes="Filled" 
+          wpf:TextFieldAssist.Label="Portal Code"
+          Width="250" 
+          HorizontalAlignment="Left"
+          Margin="0 0 10 0" />
+      </WrapPanel>
+      -->
+      
     </ContentView.Content>
 
     <ContentView.Buttons>

@@ -57,7 +57,7 @@
         </ControlTemplate>
       </Setter>
 
-      <Setter Property="Background" Value="Red" />
+      <Setter Property="Background" Value="Transparent" />
     </Style.Setters>
   </Style>
 
