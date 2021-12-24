@@ -1,6 +1,7 @@
 <Application 
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:fluentAvalonia="using:FluentAvalonia.Styling"
     xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
     xmlns:local="using:SalesApp"
     x:Class="SalesApp.App">
@@ -16,6 +17,7 @@
     <Application.Styles>
         <FluentTheme Mode="Light"/>
 
+        <StyleInclude Source="avares://DialogHost.Avalonia/Styles.xaml" />
         <StyleInclude Source="avares://Material.Avalonia/Material.Avalonia.Templates.xaml" />
         <StyleInclude Source="avares://Material.DataGrid/DataGrid.xaml"/>
 
@@ -27,6 +29,6 @@
         <StyleInclude Source="/Assets/QuitAppButtonStyle.axaml" />
         <StyleInclude Source="/Assets/MenuItemButtonStyle.axaml" />
 
-
+        <fluentAvalonia:FluentAvaloniaTheme />
     </Application.Styles>
 </Application>

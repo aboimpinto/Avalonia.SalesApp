@@ -13,7 +13,8 @@ namespace SalesApp.Clients.ViewModels
 
         public void AddClientCommand()
         {
-            this._navigationService.Navigate("AddUpdateClientViewModel");
+            this._navigationService.ShowModalWindow("AddUpdateClientViewModel");
+            // this._navigationService.Navigate("AddUpdateClientViewModel");
         }
     }
 }

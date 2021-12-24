@@ -8,11 +8,14 @@ namespace ShowcaseApplication.Core
 
         public Subject<ViewModelBase> OnNavigation { get; }
 
+        public Subject<ViewModelBase> OnModalNavigation  { get; }
+
         public NavigationService(IServiceLocator serviceLocator)
         {
             this._serviceLocator = serviceLocator;
 
             this.OnNavigation = new Subject<ViewModelBase>();
+            this.OnModalNavigation = new Subject<ViewModelBase>();
         }
 
         public Task Navigate(string navigationContext)
@@ -23,5 +26,14 @@ namespace ShowcaseApplication.Core
 
             return Task.CompletedTask;
         }   
+
+        public Task ShowModalWindow(string navigationContext)
+        {
+            var viewModel = this._serviceLocator.ServiceProvider.GetService<ViewModelBase>(navigationContext);
+
+            this.OnModalNavigation.OnNext(viewModel);
+
+            return Task.CompletedTask;
+        }
     }
 }

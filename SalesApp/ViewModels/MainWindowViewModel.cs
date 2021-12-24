@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Input;
+using FluentAvalonia.UI.Controls;
 using ReactiveUI;
 using ShowcaseApplication.Core;
 
@@ -45,6 +46,18 @@ namespace SalesApp.ViewModels
             this._navigationService
                 .OnNavigation
                 .Subscribe(x => this.NavigationContent = x);
+
+            this._navigationService
+                .OnModalNavigation
+                .Subscribe(async x => 
+                {
+                    await new ContentDialog()
+                    {
+                        Title =  "New client",
+                        Content = "Content of the new client",
+                        CloseButtonText = "Close",
+                    }.ShowAsync();
+                });
 
             this.OnDashboardNavigationClick();
         }

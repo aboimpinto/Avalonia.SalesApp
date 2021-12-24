@@ -5,24 +5,26 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <AvaloniaResource Include="Assets\**" />
-    <None Remove=".gitignore" />
+    <Folder Include="Models\"/>
+    <AvaloniaResource Include="Assets\**"/>
+    <None Remove=".gitignore"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="*" />
-    <PackageReference Include="Avalonia.Desktop" Version="*" />
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="*" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="*" />
-    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="*" />
-    <PackageReference Include="Material.Icons.Avalonia" Version="*" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
+    <PackageReference Include="Avalonia" Version="*"/>
+    <PackageReference Include="Avalonia.Desktop" Version="*"/>
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="*"/>
+    <PackageReference Include="Avalonia.ReactiveUI" Version="*"/>
+    <PackageReference Include="Avalonia.Xaml.Interactivity" Version="*"/>
+    <PackageReference Include="Material.Icons.Avalonia" Version="*"/>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*"/>
+    <PackageReference Include="DialogHost.Avalonia" Version="*"/>
+    <PackageReference Include="FluentAvaloniaUI" Version="*"/>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj" />
-    <ProjectReference Include="..\SalesApp.Clients\SalesApp.Clients.csproj" />
-    <ProjectReference Include="..\SalesApp.Products\SalesApp.Products.csproj" />
-    <ProjectReference Include="..\SalesApp.Orders\SalesApp.Orders.csproj" />
-    <ProjectReference Include="..\SalesApp.DbAccess\SalesApp.DbAccess.csproj" />
+    <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj"/>
+    <ProjectReference Include="..\SalesApp.Clients\SalesApp.Clients.csproj"/>
+    <ProjectReference Include="..\SalesApp.Products\SalesApp.Products.csproj"/>
+    <ProjectReference Include="..\SalesApp.Orders\SalesApp.Orders.csproj"/>
+    <ProjectReference Include="..\SalesApp.DbAccess\SalesApp.DbAccess.csproj"/>
   </ItemGroup>
 </Project>

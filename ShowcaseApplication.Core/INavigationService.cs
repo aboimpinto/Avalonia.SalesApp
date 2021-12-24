@@ -6,6 +6,10 @@ namespace ShowcaseApplication.Core
     {
         Subject<ViewModelBase> OnNavigation { get; }
 
+        Subject<ViewModelBase> OnModalNavigation  { get; }
+
         Task Navigate(string navigationContext);
+
+        Task ShowModalWindow(string navigationContext);
     }
 }

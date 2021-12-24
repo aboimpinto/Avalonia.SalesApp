@@ -8,7 +8,7 @@
     <PackageReference Include="Avalonia" Version="*" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
-    <PackageReference Include="Material.Avalonia" Version="*" />
+    <PackageReference Include="Material.Avalonia" Version="2.5.0.43-nightly" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShowcaseApplication.Core\ShowcaseApplication.Core.csproj" />

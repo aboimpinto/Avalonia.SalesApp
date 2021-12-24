@@ -17,7 +17,7 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="*" />
     <PackageReference Include="Avalonia.Xaml.Interactivity" Version="*" />
     <PackageReference Include="Material.Icons.Avalonia" Version="*" />
-    <PackageReference Include="Material.Avalonia" Version="*" />
+    <PackageReference Include="Material.Avalonia" Version="2.5.0.43-nightly" />
   </ItemGroup>
 
 </Project>

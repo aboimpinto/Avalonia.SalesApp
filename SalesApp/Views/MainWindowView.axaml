@@ -4,6 +4,7 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
   xmlns:i="using:Avalonia.Xaml.Interactivity"
+  xmlns:dialogHost="clr-namespace:DialogHost;assembly=DialogHost.Avalonia"
   xmlns:behaviors="clr-namespace:SalesApp.Behaviors"
   xmlns:controls="clr-namespace:SalesApp.Controls"
   x:Class="SalesApp.Views.MainWindowView"
@@ -21,6 +22,21 @@
   </i:Interaction.Behaviors>
 
   <Panel>
+    <dialogHost:DialogHost
+      Identifier="MainDialogHost"
+      DialogMargin="16"
+      dialogHost:DialogHostStyle.CornerRadius="8">
+
+      <ContentPresenter>
+        <ContentPresenter.Content>
+          <Grid Margin="16">
+            <TextBlock Text="This text is in the Modal Dialog." />
+          </Grid>
+        </ContentPresenter.Content>
+      </ContentPresenter>
+
+    </dialogHost:DialogHost>
+
     <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black" />
 
     <Grid>
