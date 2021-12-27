@@ -22,22 +22,10 @@
   </i:Interaction.Behaviors>
 
   <Panel>
-    <dialogHost:DialogHost
-      Identifier="MainDialogHost"
-      DialogMargin="16"
-      dialogHost:DialogHostStyle.CornerRadius="8">
-
-      <ContentPresenter>
-        <ContentPresenter.Content>
-          <Grid Margin="16">
-            <TextBlock Text="This text is in the Modal Dialog." />
-          </Grid>
-        </ContentPresenter.Content>
-      </ContentPresenter>
-
-    </dialogHost:DialogHost>
-
     <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black" />
+
+    <ModalDialog IsVisible="{Binding IsModalDialogOpen}" IsOpen="{Binding IsModalDialogOpen}">
+    </ModalDialog>
 
     <Grid>
       <Grid.RowDefinitions>

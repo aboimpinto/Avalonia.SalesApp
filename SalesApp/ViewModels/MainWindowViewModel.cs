@@ -10,6 +10,7 @@ namespace SalesApp.ViewModels
     {
         private bool _closeApplication;
         private ViewModelBase _navigationContent;
+        private bool _isModalDialogOpen;
         private readonly INavigationService _navigationService;
 
         public ICommand CloseWindowCommand { get; }
@@ -18,17 +19,23 @@ namespace SalesApp.ViewModels
         public ICommand ClientsNavigationCommand { get; }
         public ICommand ProductsNavigationCommand { get; }
         public ICommand SettingsNavigationCommand { get; }
-        
-        public ViewModelBase NavigationContent 
-        { 
-            get => this._navigationContent; 
-            set => this.RaiseAndSetIfChanged(ref this._navigationContent, value); 
+
+        public ViewModelBase NavigationContent
+        {
+            get => this._navigationContent;
+            set => this.RaiseAndSetIfChanged(ref this._navigationContent, value);
         }
 
         public bool CloseApplication
         {
             get => this._closeApplication;
             set => this.RaiseAndSetIfChanged(ref this._closeApplication, value);
+        }
+
+        public bool IsModalDialogOpen 
+        { 
+            get => this._isModalDialogOpen; 
+            set => this.RaiseAndSetIfChanged(ref this._isModalDialogOpen, value); 
         }
 
         public MainWindowViewModel(INavigationService navigationService)
@@ -49,11 +56,11 @@ namespace SalesApp.ViewModels
 
             this._navigationService
                 .OnModalNavigation
-                .Subscribe(async x => 
+                .Subscribe(async x =>
                 {
                     await new ContentDialog()
                     {
-                        Title =  "New client",
+                        Title = "New client",
                         Content = "Content of the new client",
                         CloseButtonText = "Close",
                     }.ShowAsync();
@@ -64,26 +71,31 @@ namespace SalesApp.ViewModels
 
         private void OnDashboardNavigationClick()
         {
+            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("DashboardViewModel");
         }
 
         private void OnOrdersNavigationClick()
         {
+            this.IsModalDialogOpen = true;
             this._navigationService.Navigate("OrdersViewModel");
         }
 
         private void onClientsNavigationClick()
         {
+            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("ClientsViewModel");
         }
 
         private void OnProductsNavigationClick()
         {
+            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("ProductsViewModel");
         }
 
         private void OnSettingsNavigationClick()
         {
+            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("SettingsViewModel");
         }
 

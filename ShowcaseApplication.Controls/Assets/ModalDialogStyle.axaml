@@ -8,12 +8,32 @@
     </Border>
   </Design.PreviewWith>
 
+  <Styles.Resources>
+    <Color x:Key="SmokeFillColorDefault">#4D000000</Color>
+
+    <SolidColorBrush x:Key="SmokeFillColorDefaultBrush" Color="{StaticResource SmokeFillColorDefault}" />
+
+    <StaticResource x:Key="ContentDialogSmokeFill" ResourceKey="SmokeFillColorDefaultBrush" />
+  </Styles.Resources>
+
   <Style Selector="ModalDialog">
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="Container">
+          <Grid Name="LayoutRoot" Background="#4D000000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Border Name="BackgroundElement">
+            </Border>
+          </Grid>
         </Border>
       </ControlTemplate>
     </Setter>
+
+    <Setter Property="ZIndex" Value="99" />
   </Style>
+
+  <!-- <Style Selector="ModalDialog:open /template/ Panel#LayoutRoot">
+    <Setter Property="IsVisible" Value="True" />
+    <Setter Property="Background" Value="#4D000000" />
+  </Style> -->
+
 </Styles>
