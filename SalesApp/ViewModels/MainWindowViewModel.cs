@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using FluentAvalonia.UI.Controls;
 using ReactiveUI;
@@ -10,8 +11,9 @@ namespace SalesApp.ViewModels
     {
         private bool _closeApplication;
         private ViewModelBase _navigationContent;
-        private bool _isModalDialogOpen;
         private readonly INavigationService _navigationService;
+        private readonly IModalDialogService _modalNavigationService;
+        private readonly ModalDialogViewModalBase _dialogViewModel;
 
         public ICommand CloseWindowCommand { get; }
         public ICommand DashboardNavigationCommand { get; }
@@ -32,15 +34,14 @@ namespace SalesApp.ViewModels
             set => this.RaiseAndSetIfChanged(ref this._closeApplication, value);
         }
 
-        public bool IsModalDialogOpen 
-        { 
-            get => this._isModalDialogOpen; 
-            set => this.RaiseAndSetIfChanged(ref this._isModalDialogOpen, value); 
-        }
-
-        public MainWindowViewModel(INavigationService navigationService)
+        public MainWindowViewModel(
+            INavigationService navigationService,
+            IModalDialogService modalNavigationService,
+            ModalDialogViewModalBase dialogViewModel)
         {
             this._navigationService = navigationService;
+            this._modalNavigationService = modalNavigationService;
+            this._dialogViewModel = dialogViewModel;
 
             this.CloseWindowCommand = ReactiveCommand.Create(this.OnCloseWindow);
 
@@ -71,31 +72,31 @@ namespace SalesApp.ViewModels
 
         private void OnDashboardNavigationClick()
         {
-            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("DashboardViewModel");
         }
 
-        private void OnOrdersNavigationClick()
+        private async Task OnOrdersNavigationClick()
         {
-            this.IsModalDialogOpen = true;
+            var result = await this._modalNavigationService.Show(this._dialogViewModel, result => 
+            {
+                var test = result;
+            });
+
             this._navigationService.Navigate("OrdersViewModel");
         }
 
         private void onClientsNavigationClick()
         {
-            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("ClientsViewModel");
         }
 
         private void OnProductsNavigationClick()
         {
-            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("ProductsViewModel");
         }
 
         private void OnSettingsNavigationClick()
         {
-            this.IsModalDialogOpen = false;
             this._navigationService.Navigate("SettingsViewModel");
         }
 
