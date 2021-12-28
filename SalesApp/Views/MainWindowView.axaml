@@ -24,8 +24,6 @@
   <Panel>
     <Border Background="#F8F5ED" CornerRadius="10" BorderThickness="2" BorderBrush="Black" />
 
-    <ModalDialog IsVisible="{Binding IsModalDialogOpen}" IsOpen="{Binding IsModalDialogOpen}">
-    </ModalDialog>
 
     <Grid>
       <Grid.RowDefinitions>
@@ -45,6 +43,19 @@
             Command="{Binding CloseWindowCommand}"/>
         </DockPanel>
       </Panel>
+
+      <Panel Grid.Row="2" VerticalAlignment="Center" Background="Transparent">
+        <TextBlock Text="Application is ready" Margin="10 0 0 0" />
+      </Panel>
+      
+      <!-- <ModalDialog 
+        Grid.Row="1" 
+        IsVisible="{Binding IsModalDialogOpen}" 
+        IsOpen="{Binding IsModalDialogOpen}">
+
+        <TextBlock Text="In the ModalDialog" />
+
+      </ModalDialog> -->
 
       <Grid Grid.Row="1">
         <Grid.ColumnDefinitions>
@@ -120,11 +131,6 @@
           Content="{Binding NavigationContent}"
           Margin="5" />
       </Grid>
-
-      <Panel Grid.Row="2" VerticalAlignment="Center" Background="Transparent">
-        <TextBlock Text="Application is ready" Margin="10 0 0 0" />
-      </Panel>
-
     </Grid>
   </Panel>
 

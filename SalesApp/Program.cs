@@ -22,9 +22,13 @@ namespace SalesApp
         public static void Main(string[] args) 
         {
             ServiceLocator.ServiceCollection.AddSingleton<INavigationService, NavigationService>();
+            ServiceLocator.ServiceCollection.AddSingleton<IModalDialogService, ModalDialogService>();
+
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, MainWindowViewModel>("MainWindowViewModel");
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, DashboardViewModel>("DashboardViewModel");
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, SettingsViewModel>("SettingsViewModel");
+
+            ServiceLocator.ServiceCollection.AddScoped<ModalDialogViewModalBase, DialogViewModel>();
 
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         } 

@@ -28,9 +28,13 @@ namespace ShowcaseApplication.Controls
                     break;
              }
 
-
             base.OnPropertyChanged(change);
         }
 
+        public void Close()
+        {
+            this.IsVisible = false;
+            // PseudoClasses.Set(":open", false);
+        }
     }
 }

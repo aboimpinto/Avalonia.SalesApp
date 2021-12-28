@@ -20,10 +20,21 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="Container">
-          <Grid Name="LayoutRoot" Background="#4D000000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Border Name="BackgroundElement">
+          <Panel Name="LayoutRoot" Background="#4D000000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Border 
+              Name="BackgroundElement" 
+              VerticalAlignment="Center" 
+              HorizontalAlignment="Center"
+              Background="White"
+              ClipToBounds="True" 
+							CornerRadius="10">
+
+              <ContentPresenter 
+                Content="{TemplateBinding Content}"
+                Margin="10" />
+
             </Border>
-          </Grid>
+          </Panel>
         </Border>
       </ControlTemplate>
     </Setter>
