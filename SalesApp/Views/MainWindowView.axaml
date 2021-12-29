@@ -9,6 +9,7 @@
   xmlns:controls="clr-namespace:SalesApp.Controls"
   x:Class="SalesApp.Views.MainWindowView"
   Title="ModernFlatAvaloniaUI"
+  WindowStartupLocation="CenterScreen"
   TransparencyLevelHint="Transparent"
   Background="Transparent"
   ExtendClientAreaToDecorationsHint="True"
@@ -19,6 +20,7 @@
   
   <i:Interaction.Behaviors>
       <behaviors:WindowCloseBehavior CloseTrigger="{Binding CloseApplication}" />
+      <behaviors:CenterScreenBehavior />
   </i:Interaction.Behaviors>
 
   <Panel>
