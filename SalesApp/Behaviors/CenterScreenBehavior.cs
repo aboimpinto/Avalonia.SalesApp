@@ -16,10 +16,35 @@ namespace SalesApp.Behaviors
         {
             base.OnAttached();
 
+            if (OperatingSystem.IsWindows())
+            {
+                // Not need for windows
+            }
+
             if (this.AssociatedObject == null)
             {
                 return;
             }
+
+            // var scale = this.AssociatedObject.PlatformImpl?.DesktopScaling ?? 1.0;
+            // var pOwner = this.AssociatedObject.Owner?.PlatformImpl;
+            // if (pOwner != null)
+            // {
+            //     scale = pOwner.DesktopScaling;
+            // }
+            // var rect = new PixelRect(
+            //     PixelPoint.Origin,
+            //     PixelSize.FromSize(this.AssociatedObject.ClientSize, scale));
+
+            // if (this.AssociatedObject.WindowStartupLocation == WindowStartupLocation.CenterScreen)
+            // {
+            //     var screen = this.AssociatedObject.Screens.ScreenFromPoint(pOwner?.Position ?? this.AssociatedObject.Position);
+            //     if (screen == null)
+            //     {
+            //         return;
+            //     }
+            //     this.AssociatedObject.Position = screen.WorkingArea.CenterRect(rect).Position;
+            // }
 
             Screen? screen = null;
             while (screen == null) 
