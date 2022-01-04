@@ -16,7 +16,8 @@ namespace ShowcaseApplication.Controls
 
         public ModalDialog()
         {
-            PseudoClasses.Set(":open", false);
+            PseudoClasses.Set(":open", true);
+            PseudoClasses.Set(":hidden", false);
         }
 
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
@@ -25,6 +26,7 @@ namespace ShowcaseApplication.Controls
              {
                  case nameof(IsVisible):
                     PseudoClasses.Set(":open", this.IsVisible);
+                    PseudoClasses.Set(":hidden", !this.IsVisible);
                     break;
              }
 
@@ -33,8 +35,8 @@ namespace ShowcaseApplication.Controls
 
         public void Close()
         {
-            this.IsVisible = false;
-            // PseudoClasses.Set(":open", false);
+            PseudoClasses.Set(":open", false);
+            PseudoClasses.Set(":hidden", true);
         }
     }
 }

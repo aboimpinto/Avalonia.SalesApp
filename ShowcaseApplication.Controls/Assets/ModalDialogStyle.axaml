@@ -42,9 +42,61 @@
     <Setter Property="ZIndex" Value="99" />
   </Style>
 
-  <!-- <Style Selector="ModalDialog:open /template/ Panel#LayoutRoot">
-    <Setter Property="IsVisible" Value="True" />
-    <Setter Property="Background" Value="#4D000000" />
-  </Style> -->
+  <Style Selector="ModalDialog:open /template/ Panel#LayoutRoot">
+    <Style.Animations>
+      <Animation Duration="00:00:00.250" FillMode="Forward">
+        <KeyFrame Cue="0%">
+          <Setter Property="Opacity" Value="0.0" />
+        </KeyFrame>
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="1.0" />
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+  <Style Selector="ModalDialog:open /template/ Border#Container">
+    <Style.Animations>
+      <Animation Duration="00:00:00.250" FillMode="Forward">
+        <KeyFrame Cue="0%">
+          <Setter Property="ScaleTransform.ScaleX" Value="2.00" />
+          <Setter Property="ScaleTransform.ScaleY" Value="2.00" />
+        </KeyFrame>
+        <KeyFrame Cue="100%" KeySpline="0,0 0,1">
+          <Setter Property="ScaleTransform.ScaleX" Value="1.00" />
+          <Setter Property="ScaleTransform.ScaleY" Value="1.00" />
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+  <Style Selector="ModalDialog:hidden /template/ Panel#LayoutRoot">
+    <Style.Animations>
+      <Animation Duration="00:00:00.167" FillMode="Forward">
+        <KeyFrame Cue="0%">
+          <Setter Property="Opacity" Value="1.0" />
+        </KeyFrame>
+        <KeyFrame Cue="100%">
+          <Setter Property="Opacity" Value="0.0" />
+          <Setter Property="IsVisible" Value="False" />
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
+
+  <Style Selector="ModalDialog:hidden /template/ Border#Container">
+    <Style.Animations>
+      <Animation Duration="00:00:00.167" FillMode="Forward">
+        <KeyFrame Cue="0%">
+          <Setter Property="ScaleTransform.ScaleX" Value="1.00" />
+          <Setter Property="ScaleTransform.ScaleY" Value="1.00" />
+        </KeyFrame>
+        <KeyFrame Cue="100%" KeySpline="0,0 0,1">
+          <Setter Property="ScaleTransform.ScaleX" Value="1.30" />
+          <Setter Property="ScaleTransform.ScaleY" Value="1.30" />
+        </KeyFrame>
+      </Animation>
+    </Style.Animations>
+  </Style>
 
 </Styles>
