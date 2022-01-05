@@ -77,8 +77,7 @@ namespace SalesApp.ViewModels
 
         private async Task OnOrdersNavigationClick()
         {
-            var modalDialogArgs = new DialogViewModelArgs(1974);
-            var result = await this._modalNavigationService.Show<DialogResult>(this._dialogViewModel, modalDialogArgs);
+            var result = await this._modalNavigationService.Show<DialogResult>(this._dialogViewModel, 1974);
 
             this._navigationService.Navigate("OrdersViewModel");
         }

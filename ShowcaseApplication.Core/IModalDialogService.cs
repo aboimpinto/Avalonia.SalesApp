@@ -6,10 +6,10 @@ namespace ShowcaseApplication.Core
     {
         Task<ModalDialogResult> Show(
             ModalDialogViewModalBase viewModel, 
-            ModalDialogArgs args);
+            params object[] parameters);
 
         Task<ModalDialogResult<TResult>> Show<TResult>(
             ModalDialogViewModalBase<TResult> viewModel, 
-            ModalDialogArgs args);
+            params object[] parameters);
     }
 }

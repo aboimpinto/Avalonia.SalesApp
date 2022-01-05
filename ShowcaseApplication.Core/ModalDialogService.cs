@@ -19,7 +19,7 @@ namespace ShowcaseApplication.Core
 
         public async Task<ModalDialogResult> Show(
             ModalDialogViewModalBase viewModel, 
-            ModalDialogArgs args)
+            params object[] parameters)
         {
             var tcs = new TaskCompletionSource<ModalDialogResult>();
 
@@ -28,7 +28,11 @@ namespace ShowcaseApplication.Core
                 this._host = new ShowcaseApplication.Controls.DialogHost();
             }
 
-            viewModel.SetArgs(args);
+            if (viewModel is ILoadable)
+            {
+                ((ILoadable)viewModel)?.Load(parameters);
+            }
+
             var modalDialog = new ModalDialog
             {
                 Content = viewModel
@@ -59,7 +63,7 @@ namespace ShowcaseApplication.Core
 
         public async Task<ModalDialogResult<TResult>> Show<TResult>(
             ModalDialogViewModalBase<TResult> viewModel, 
-            ModalDialogArgs args)
+            params object[] parameters)
         {
             var tcsWithResult = new TaskCompletionSource<ModalDialogResult<TResult>>();
 
@@ -68,7 +72,11 @@ namespace ShowcaseApplication.Core
                 this._host = new ShowcaseApplication.Controls.DialogHost();
             }
 
-            viewModel.SetArgs(args);
+            if (viewModel is ILoadable)
+            {
+                ((ILoadable)viewModel)?.Load(parameters);
+            }
+
             var modalDialog = new ModalDialog
             {
                 Content = viewModel
