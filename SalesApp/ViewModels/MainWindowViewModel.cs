@@ -13,7 +13,7 @@ namespace SalesApp.ViewModels
         private ViewModelBase _navigationContent;
         private readonly INavigationService _navigationService;
         private readonly IModalDialogService _modalNavigationService;
-        private readonly ModalDialogViewModalBase _dialogViewModel;
+        private readonly ModalDialogViewModalBase<DialogResult> _dialogViewModel;
 
         public ICommand CloseWindowCommand { get; }
         public ICommand DashboardNavigationCommand { get; }
@@ -37,7 +37,7 @@ namespace SalesApp.ViewModels
         public MainWindowViewModel(
             INavigationService navigationService,
             IModalDialogService modalNavigationService,
-            ModalDialogViewModalBase dialogViewModel)
+            ModalDialogViewModalBase<DialogResult> dialogViewModel)
         {
             this._navigationService = navigationService;
             this._modalNavigationService = modalNavigationService;
@@ -77,10 +77,8 @@ namespace SalesApp.ViewModels
 
         private async Task OnOrdersNavigationClick()
         {
-            var result = await this._modalNavigationService.Show(this._dialogViewModel, result => 
-            {
-                var test = result;
-            });
+            var modalDialogArgs = new DialogViewModelArgs(1974);
+            var result = await this._modalNavigationService.Show<DialogResult>(this._dialogViewModel, modalDialogArgs);
 
             this._navigationService.Navigate("OrdersViewModel");
         }

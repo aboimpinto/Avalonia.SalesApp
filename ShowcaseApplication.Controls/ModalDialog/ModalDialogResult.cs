@@ -1,4 +1,4 @@
-namespace ShowcaseApplication.Core
+namespace ShowcaseApplication.Controls
 {
     public class ModalDialogResult
     {

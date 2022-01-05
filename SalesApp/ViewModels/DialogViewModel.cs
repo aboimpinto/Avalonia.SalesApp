@@ -1,12 +1,17 @@
+using ShowcaseApplication.Controls;
 using ShowcaseApplication.Core;
 
 namespace SalesApp.ViewModels
 {
-    public class DialogViewModel : ModalDialogViewModalBase
+    public class DialogViewModel : ModalDialogViewModalBase<DialogResult>
     {
         public void CloseCommand()
         {
-            this.Close(new ModalDialogResultArgs(99));
+            var test = this.Args as DialogViewModelArgs;
+
+            var result = new ModalDialogResult<DialogResult>(new DialogResult(test.UserId), 99);
+
+            this.Close(result);
         }
     }
 }

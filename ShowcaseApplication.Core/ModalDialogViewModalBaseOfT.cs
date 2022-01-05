@@ -2,9 +2,9 @@ using ShowcaseApplication.Controls;
 
 namespace ShowcaseApplication.Core
 {
-    public class ModalDialogViewModalBase : ViewModelBase
+    public class ModalDialogViewModalBase<TResult> : ModalDialogViewModalBase
     {
-        public EventHandler<ModalDialogResult> Closed { get; set; }
+        public EventHandler<ModalDialogResult<TResult>> Closed { get; set; }
 
         public ModalDialogArgs Args { get; set; }
 
@@ -13,7 +13,7 @@ namespace ShowcaseApplication.Core
             this.Args = args;
         }
 
-        public void Close(ModalDialogResult result)
+        public void Close(ModalDialogResult<TResult> result)
         {
             this.Closed?.Invoke(this, result);
         }

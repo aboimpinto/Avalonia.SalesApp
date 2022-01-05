@@ -28,7 +28,7 @@ namespace SalesApp
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, DashboardViewModel>("DashboardViewModel");
             ServiceLocator.ServiceCollection.AddScoped<ViewModelBase, SettingsViewModel>("SettingsViewModel");
 
-            ServiceLocator.ServiceCollection.AddScoped<ModalDialogViewModalBase, DialogViewModel>();
+            ServiceLocator.ServiceCollection.AddScoped<ModalDialogViewModalBase<DialogResult>, DialogViewModel>();
 
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         } 
